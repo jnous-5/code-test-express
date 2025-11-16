@@ -1,0 +1,19 @@
+# Logs
+yarn-debug.log*
+
+# Environments
+.env
+.env.*
+
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# OS specific files
+.DS_Store
+
+# Tests
+coverage
+*.lcov
