@@ -3,7 +3,13 @@
     "include": ["**/*.ts"],
     "exclude": ["dist"],
     "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "bundler",
         "rootDir": "./src",
-        "outDir": "./dist"
+        "outDir": "./dist",
+        "baseUrl": ".",
+        "paths": {
+            "src/*": ["src/*"]
+        }
     }
 }
