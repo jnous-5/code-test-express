@@ -4,6 +4,11 @@
   "type": "module",
   "author": "Jhoncel Nayve <jhoncelnayve@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
   "dependencies": {
     "express": "^5.1.0"
   },
