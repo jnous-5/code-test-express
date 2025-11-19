@@ -1,5 +1,5 @@
 import { createProperty, getProperties } from 'src/store';
-import { Property } from 'src/types';
+import { Property, SearchResult } from 'src/types';
 
 const resolvers = {
     Mutation: {
@@ -8,8 +8,8 @@ const resolvers = {
         },
     },
     Query: {
-        properties: (): Property[] => {
-            return getProperties();
+        properties: (_: unknown, args: { suburb?: string }): SearchResult[] => {
+            return getProperties({ suburb: args.suburb });
         },
     },
 };
