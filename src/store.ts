@@ -12,6 +12,15 @@ const _db: Store = {
 };
 
 /**
+ * Resets the database to its initial value.
+ *
+ * @returns {void}
+ */
+export function clearStore(): void {
+    _db.properties = [];
+}
+
+/**
  * Creates a new property item in the database.
  *
  * @param {Omit<Property, 'id'>} data The property details.
@@ -32,7 +41,9 @@ export function createProperty(data: Omit<Property, 'id'>): Property {
  * @param {Object} filter Optional filter to apply.
  * @returns {SearchResult[]}
  */
-export function getProperties({ suburb }: { suburb?: string }): SearchResult[] {
+export function getProperties({
+    suburb,
+}: { suburb?: string } = {}): SearchResult[] {
     let matches = _db.properties;
 
     if (suburb) {
